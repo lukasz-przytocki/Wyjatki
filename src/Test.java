@@ -15,9 +15,11 @@ public class Test {
             case 1:
 
         try {
-
-            account1.withdraw(600);
-            System.out.println(account1.getBalance());
+            System.out.println("How much do you want withdraw?\n" +
+                    "Your account balance: "+ account1.getBalance());
+            account1.withdraw(scanner.nextInt());
+            scanner.nextLine();
+            System.out.println("Balance after withdraw: "+account1.getBalance());
 
         } catch (NullPointerException ex) {
             System.out.println("Brak osoby");
@@ -28,7 +30,10 @@ public class Test {
         }
         break;
             case 2:
-                account1.deposit(600);
+                System.out.println("How much do you want deposit? ");
+                account1.deposit(scanner.nextInt());
+                scanner.nextLine();
+                System.out.println("Your balance: "+ account1.getBalance());
                 break;
             case 3:
                 default:
